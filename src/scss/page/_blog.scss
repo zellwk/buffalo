@@ -26,6 +26,10 @@
       text-decoration: underline;
     }
   }
+
+  + * {
+    margin-top: 0;
+  }
 }
 
 .blog-page .read-more {

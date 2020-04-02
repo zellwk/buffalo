@@ -1,10 +1,27 @@
 ---
 layout: _layout/page
-newsletter: newsletter
 ---
 
 {%- markdown %}
   # Contact me
 
-  Wanna chat? Feel free to email me at {{site.author.email}} and I'll get back to you as soon as I can.
+  Wanna chat? Let me know! I'll get back to you as soon as I can!
+
+  <form name="contact" method="POST" action="/thanks" data-netlify="true">
+  <div data-name="name">
+    <label class="highlight" for="name">Your name:</label>
+    <input type="text" id="name" name="name">
+  </div>
+  <div data-name="email">
+    <label class="highlight" for="email">Your email:</label>
+    <input type="text" id="email" name="email">
+  </div>
+  <div data-name="message">
+    <label class="highlight" for="message">Message</label>
+    <textarea id="message" name="message"></textarea>
+  </div>
+  <p>
+    <button class="button" type="submit">Send message</button>
+  </p>
+</form>
 {%- endmarkdown %}

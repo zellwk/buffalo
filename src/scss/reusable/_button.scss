@@ -1,0 +1,17 @@
+button {
+  display: inline-block;
+  font-size: calc(1rem * 0.9);
+  font-family: "IBM Plex Mono", monospace;
+  letter-spacing: -0.035em;
+  padding: 0.375em 1em;
+  border-radius: 0.25rem;
+  border: 1px solid var(--neutral-300);
+  background-color: var(--neutral-050);
+  color: var(--neutral-900);
+  text-decoration: none;
+
+  &:hover {
+    background-color: var(--neutral-100);
+    color: var(--neutral-900);
+  }
+}

@@ -1,0 +1,26 @@
+form {
+  display: grid;
+  gap: 1rem 2rem;
+
+  label {
+    display: block;
+    margin-bottom: 0.125rem;
+    color: var(--neutral-900);
+  }
+}
+
+form[name="contact"] {
+  @include mappy-bp(600px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "name email"
+      "message message";
+
+    $fields: ("name", "email", "message");
+    @each $field in $fields {
+      [data-name="#{$field}"] {
+        grid-area: #{$field};
+      }
+    }
+  }
+}
