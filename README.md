@@ -1,11 +1,15 @@
 # Buffalo
 
+https://app.netlify.com/start/deploy?repository=https://github.com/netlify/netlify-statuskit
+
 TODO items:
-1. Style blog
-2. Create Tag pages and link it to the blog pages
-3. Connect Convertkit
-4. Set Index page to blog page. Probably through a redirect to make things easier for people later.
-5.
+1. Style Convertkit
+2. Create videos to teach people how to use Buffalo
+
+<a href="https://app.netlify.com/start/deploy?repository=https://github.com/zellwk/buffalo
+">
+  <img src="https://www.netlify.com/img/deploy/button.svg" alt="Netlify button" >
+</a>
 
 ----------
 
