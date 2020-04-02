@@ -1,0 +1,72 @@
+// Typography styles
+html {
+  font-size: 112.5%;
+  font-family: "IBM Plex Sans", sans-serif;
+  line-height: 1.4;
+  hanging-punctuation: first allow-end; // Only works on Safari
+  color: #333;
+
+  @include mappy-bp(600px) {
+    font-size: 137.5%;
+  }
+}
+
+h1 {
+  font-size: calc(1rem * 1.2 * 1.2 * 1.2 * 1.2 * 1.2);
+  line-height: 1.05;
+  font-family: "IBM Plex Serif";
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: calc(1rem * 1.2 * 1.2 * 1.2);
+  font-family: "IBM Plex Serif";
+  line-height: 1.1;
+  font-weight: 500;
+  color: #222;
+}
+
+h3 {
+  font-size: calc(1rem * 1.2);
+  font-family: "IBM Plex Mono";
+  font-weight: 600;
+  color: #222;
+}
+
+blockquote {
+  padding: 0.5rem 0.75rem;
+  border-left: 0.25rem solid var(--neutral-100);
+}
+
+cite {
+  font-size: calc(1rem / 1.2 * 0.9);
+  font-style: normal;
+  font-family: "IBM Plex Mono", monospace;
+
+  &::before {
+    content: "–";
+    margin-right: 0.25em;
+  }
+}
+
+code {
+  font-size: 0.9em;
+  font-family: "IBM Plex Mono", monospace;
+  background: var(--neutral-050);
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  font-size: 0.9em;
+  font-family: "IBM Plex Mono", monospace;
+  line-height: inherit;
+}
+
+a {
+  color: var(--primary-800);
+  &:hover {
+    color: var(--primary-500);
+  }
+}

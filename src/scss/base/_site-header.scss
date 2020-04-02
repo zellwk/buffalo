@@ -1,0 +1,38 @@
+.site-header {
+  margin-top: 1rem;
+  @include mappy-bp(600px) {
+    margin-top: 4rem;
+  }
+}
+
+.site-nav {
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    color: var(--neutral-700);
+    &:hover {
+      color: var(--primary-500);
+      text-decoration: underline;
+    }
+  }
+}
+
+.logo {
+  text-decoration: none;
+  color: inherit;
+}
+
+.site-nav ul {
+  display: flex;
+  align-items: flex-end;
+  font-size: calc(1rem / 1.2);
+
+  > * + * {
+    margin-left: 1rem;
+  }
+}
+
+.site-nav a {
+  text-decoration: none;
+}

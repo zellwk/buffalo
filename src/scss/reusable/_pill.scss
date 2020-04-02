@@ -1,0 +1,16 @@
+.pill {
+  display: inline-block;
+  font-size: calc(1rem / 1.2 / 1.2 / 1.2);
+  font-family: "IBM Plex Mono", monospace;
+  padding: 0.375em 1em;
+  border-radius: 2em;
+  border: 1px solid var(--neutral-300);
+  background-color: var(--neutral-050);
+  color: var(--neutral-900);
+  text-decoration: none;
+
+  &:hover {
+    background-color: var(--neutral-100);
+    color: var(--neutral-900);
+  }
+}

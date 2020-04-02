@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {%- include "_head/head.njk" %}
+  </head>
+
+  <body class="{{bodyClass}}">
+    {%- if nav %}
+      <header class="site-header">
+        <div class="wrap">
+          {% include "_partials/nav.njk" -%}
+        </div>
+      </header>
+    {%- endif %}
+
+    <main>
+      <div class="wrap">
+        {{- content | safe -}}
+      </div>
+    </main>
+
+    {% if footer %}
+      {% include "_partials/footer.njk" %}
+    {% endif %}
+
+    {% if env.isDev %}
+      <script module src="/js/main.mjs"></script>
+      <script nomodule src="/js/main-legacy.js"></script>
+    {%- endif %}
+    {% if env.isProd %}
+      <script module src="/{{rev.main}}"></script>
+      <script nomodule src="/{{rev.mainLegacy}}"></script>
+    {%- endif %}
+  </body>
+</html>

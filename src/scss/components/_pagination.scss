@@ -1,0 +1,12 @@
+.pagination {
+  font-size: calc(1rem / 1.2 / 1.2 * 0.9);
+  font-family: "IBM Plex Mono", monospace;
+  margin-top: 3rem;
+}
+
+.pagination__current {
+  border: none;
+  &:hover {
+    background-color: var(--neutral-050);
+  }
+}

@@ -1,0 +1,32 @@
+<div class="post__nav">
+  <h2 id="post-nav" class="sr-only"></h2>
+  <nav aria-labelledby="post-nav">
+    {% for post in collections.posts -%}
+      {% if post.inputPath == page.inputPath -%}
+        {%- set nextPost = collections.posts[loop.index0 - 1] %}
+        {%- set previousPost = collections.posts[loop.index0 + 1] %}
+
+        {% if previousPost.url -%}
+          <a data-type="outline" href="{{previousPost.url}}" data-target="previous-post">
+            <svg height="0.7em" viewbox="0 0 22 38">
+              <path fill="currentColor" d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"></path>
+            </svg>
+            <span>{{previousPost.data.title}}</span>
+          </a>
+        {%- else %}
+          {# Empty div for automatically justifying content #}
+          <div></div>
+        {% endif -%}
+
+        {% if nextPost.url -%}
+          <a data-type="outline" href="{{nextPost.url}}" data-target="next-post">
+            <span>{{nextPost.data.title}}</span>
+            <svg height="0.7em" viewbox="0 0 22 38">
+              <path fill="currentColor" d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"></path>
+            </svg>
+          </a>
+        {% endif -%}
+      {% endif -%}
+    {% endfor -%}
+  </nav>
+</div>

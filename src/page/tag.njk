@@ -1,0 +1,29 @@
+---
+layout: _layout/page
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - post
+    - all
+permalink: /tags/{{ tag | slug}}/
+noIndex: true
+---
+{%- set taglist = collections[ tag ] -%}
+
+{% markdown %}
+ # Articles tagged with `{{ tag }}`
+
+  Here are all articles tagged with `{{tag}}`. Enjoy!
+{%- endmarkdown %}
+
+<ol>
+  {# Tags are shown in reverse chronological order #}
+  {# This means newest posts are shown first #}
+  {%- for post in taglist | reverse %}
+    <li>
+      <a href="{{ post.url | url }}">{{ post.data.title | markdown }}</a>
+    </li>
+  {%- endfor %}
+</ol>

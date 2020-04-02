@@ -1,0 +1,37 @@
+---
+layout: _layout/html
+pagination:
+  data: collections.posts
+  size: 2
+  alias: posts
+permalink: /blog{{'/page-' + (pagination.pageNumber + 1) if pagination.pageNumber}}/
+nav: true
+footer: true
+bodyClass: 'blog-page'
+---
+
+<h1>Articles</h1>
+
+{%- for post in posts | reverse %}
+  {% set id = post.data.title | slug %}
+  <article aria-labelledby="{{id}}">
+    <h2 id="{{id}}" class="highlight">
+      <a href="{{post.url}}">
+        {{- post.data.title | markdown -}}
+      </a>
+    </h2>
+
+    <div class="longform">
+      {%- markdown -%}
+      {{post.data.page.excerpt}}
+
+      <p class="read-more">
+        <a class="pill" href="{{post.url}}">Read article &rarr;</a>
+      </p>
+      {%- endmarkdown -%}
+    </div>
+
+  </article>
+{%- endfor -%}
+
+{%- createPagination pagination, page, 7 -%}

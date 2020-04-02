@@ -1,0 +1,39 @@
+---
+layout: _layout/html
+permalink: /blog/{{ slug }}/index.html
+nav: true
+footer: true
+newsletter: newsletter
+---
+
+<article class="post">
+  <h1>{{title | markdown}}</h1>
+
+  <div class="post-meta">
+    <div>
+      <div class="highlight">Published:</div>
+      <time datetime="{{page.date | htmlDateString}}">
+        {{page.date | readableDate }}
+      </time>
+    </div>
+
+    <nav>
+      <div class="highlight">Filed under:</div>
+      <ul class="post__tags">
+        {%- for tag in tags %}
+          <li>
+            <a class="pill" href="/tags/{{tag | replace('#', '')}}">{{tag}}</a>
+          </li>
+        {%- endfor %}
+      </ul>
+    </nav>
+  </div>
+
+  <div class="longform">
+    {{- content | safe -}}
+  </div>
+
+  {% include "_partials/prevNextPage.njk" %}
+</article>
+
+{%- include 'convertkit.njk' %}

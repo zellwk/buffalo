@@ -1,0 +1,25 @@
+.site-footer {
+  background-color: var(--neutral-900);
+  color: var(--neutral-500);
+  font-size: calc(1rem / 1.2);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  a {
+    color: var(--primary-300);
+    text-decoration: none;
+  }
+}
+
+.site-footer ul {
+  display: flex;
+}
+
+.site-footer li + li {
+  margin-left: 1rem;
+}
+
+.site-footer .copyright {
+  margin-top: 0.25rem;
+  font-size: calc(1rem / 1.2 / 1.2);
+}

@@ -1,0 +1,37 @@
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+{% if blockRobots -%}
+  <meta name="robots" content="noindex, follow">
+{%- endif %}
+
+{# Page Title #}
+{%- if title -%}
+  {% set pageTitle = title + ' | ' + site.title %}
+{%- else -%}
+  {% set pageTitle = site.title %}
+{%- endif -%}
+
+{# Decodes HTML entities into normal text because Markdown may have been used these values #}
+<title>{{- pageTitle | decode -}}</title>
+<link rel="canonical" href="{{- site.url -}} {{- page.url -}}">
+
+{% set pageDesc = description or site.description %}
+{% if pageDesc %}
+  <meta name="description" content="{{ pageDesc }}"/>
+  <meta property="og:description" content="{{ pageDesc }}"/>
+  <meta name="twitter:description" content="{{ pageDesc }}"/>
+{% endif %}
+
+{% if site.socialImage or socialImage %}
+  {% set image = socialImage or site.socialImage %}
+  <meta property="og:image" content="{{site.url}}{{ image }}"/>
+  <meta name="twitter:image" content="{{site.url}}{{ image }}"/>
+  <meta property="og:image:alt" content="Page image for {{ pageTitle }}"/>
+  <meta name="twitter:image:alt" content="Page image for {{ pageTitle }}"/>
+{% endif %}
+
+{% if site.author.twitter %}
+  <meta name="twitter:creator" content="@{{ site.author.twitter | replace('@', '') }}"/>
+{% endif %}

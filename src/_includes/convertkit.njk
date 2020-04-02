@@ -1,0 +1,13 @@
+{# Visit https://app.convertkit.com/landing_pages/{{ID}}/edit to the signup form #}
+{# Replace this HELLO_WORLD text with your actual newsletter ID #}
+{%- set newsletters = {
+  'newsletter': HELLO_WORLD
+} -%}
+
+<div class="ck-wrapper">
+  {% if newsletters[newsletter] -%}
+    <script defer id="_ck_{{newsletters[newsletter]}}" src="https://forms.convertkit.com/{{newsletters[newsletter]}}?v=7"></script>
+  {%- else %}
+    Invalid newsletter ID. Check the `convertkit.njk` for valid newseltter codes and ids.
+{%- endif -%}
+</div>

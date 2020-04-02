@@ -1,0 +1,27 @@
+html {
+  height: 100%;
+}
+
+// Allow footer to stick to bottom of screen if there's insufficient content
+body {
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+  border-top: 0.5rem solid var(--primary-300);
+}
+
+.wrap {
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 35rem) 2fr;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  > * {
+    grid-column: 2;
+  }
+}
+
+main {
+  flex-grow: 1;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}

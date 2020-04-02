@@ -1,0 +1,40 @@
+// Styles for long-form text
+.longform {
+  max-width: 29rem;
+
+  > * + * {
+    margin-top: 1rem;
+  }
+
+  // Pre + * and * + pre overrides margins from _prism.scss.
+  // Makes it easy to copy/paste CSS from prism if you want to change syntax highlighting theme
+  pre + *,
+  * + pre {
+    margin-top: 1rem;
+  }
+
+  * + h2 {
+    margin-top: 2rem;
+  }
+
+  h3 + * {
+    margin-top: 0.5rem;
+  }
+
+  ul {
+    list-style: disc;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  li {
+    list-style-position: outside;
+    margin-left: 2rem;
+  }
+
+  li + li {
+    margin-top: 0.125rem;
+  }
+}
