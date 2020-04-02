@@ -3,12 +3,29 @@ button {
   font-size: calc(1rem * 0.9);
   font-family: "IBM Plex Mono", monospace;
   letter-spacing: -0.035em;
-  padding: 0.375em 1em;
+  padding: 0.5em 1em;
   border-radius: 0.25rem;
-  border: 1px solid var(--neutral-300);
+  border: 1px solid var(--primary-500);
+  text-decoration: none;
+}
+
+button[data-style="primary"] {
+  border-color: var(--primary-500);
+  background-color: var(--primary-500);
+  color: var(--neutral-050);
+  font-weight: 500;
+
+  &:hover {
+    background-color: var(--primary-700);
+    color: var(--neutral-050);
+  }
+}
+
+button[data-style="secondary"] {
+  font-weight: 400;
+  border-color: var(--neutral-300);
   background-color: var(--neutral-050);
   color: var(--neutral-900);
-  text-decoration: none;
 
   &:hover {
     background-color: var(--neutral-100);

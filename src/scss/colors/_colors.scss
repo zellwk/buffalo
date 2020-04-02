@@ -1,2 +1,16 @@
 // Import your choice of colors
 @import "palettes/palette-13";
+
+// For error styles
+:root {
+  --red-050: #ffeeee;
+  --red-100: #facdcd;
+  --red-200: #f29b9b;
+  --red-300: #e66a6a;
+  --red-400: #d64545;
+  --red-500: #ba2525;
+  --red-600: #a61b1b;
+  --red-700: #911111;
+  --red-800: #780a0a;
+  --red-900: #610404;
+}

@@ -1,13 +1,30 @@
 {# Visit https://app.convertkit.com/landing_pages/{{ID}}/edit to the signup form #}
-{# Replace this HELLO_WORLD text with your actual newsletter ID #}
-{%- set newsletters = {
-  'newsletter': HELLO_WORLD
-} -%}
+{% set newsletters = {
+  default: '2c4aeb3311'
+} %}
 
-<div class="ck-wrapper">
-  {% if newsletters[newsletter] -%}
-    <script defer id="_ck_{{newsletters[newsletter]}}" src="https://forms.convertkit.com/{{newsletters[newsletter]}}?v=7"></script>
-  {%- else %}
-    Invalid newsletter ID. Check the `convertkit.njk` for valid newseltter codes and ids.
-{%- endif -%}
+{% set id = newsletters[newsletter] %}
+
+{%- if id %}
+  <div class="convertkit">
+    <script defer data-uid="{{id}}" src="https://zellwk-com.ck.page/{{id}}/index.js"></script>
+  </div>
+{%- endif %}
+
+<div class="longform error" style="margin-top: 1rem">
+  {% if id === '2c4aeb3311' %}
+    {%- markdown %}
+    **NOTE:** You're using a sample Converkit ID from Zell's account!
+
+    Please change the `newsletter` yaml entry your own Convertkit form ID. You don't want your people to come into my email list (and I don't want it either) 😉.
+
+    See `src/_includes/convertkit.njk` for more details
+  {%- endmarkdown %}
+  {% endif %}
+
+  {% if not id %}
+    {%- markdown %}
+      **Invalid Newsletter ID**. Make sure you entered the correct newsletter ID. See `src/_includes/convertkit.njk` for more details.
+    {%- endmarkdown %}
+  {%- endif %}
 </div>
