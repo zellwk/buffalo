@@ -3,8 +3,9 @@
 ## Instructions
 
 1. [Getting started]()
-2. [Creating articles and pages]()
-3. [Customizing HTML, CSS and JavaScript]()
+2. [Receiving Emails]()
+3. [Creating articles and pages]()
+4. [Customizing HTML, CSS and JavaScript]()
 
 ## Deploy to Netlify
 
