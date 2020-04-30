@@ -1,4 +1,7 @@
-button {
+// Wanted to extend button, but there was a problem with Safari.
+// It extended default button appreance which screws up styles badly.
+// Decided to extend a class instead.
+.button {
   display: inline-block;
   font-size: calc(1rem * 0.9);
   font-family: "IBM Plex Mono", monospace;
@@ -7,6 +10,10 @@ button {
   border-radius: 0.25rem;
   border: 1px solid var(--primary-500);
   text-decoration: none;
+}
+
+button {
+  @extend .button;
 }
 
 button[data-style="primary"] {

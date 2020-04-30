@@ -1,5 +1,5 @@
 .pill {
-  @extend button;
+  @extend .button;
   @extend button[data-style="secondary"];
   font-size: calc(1rem / 1.2 / 1.2 / 1.2);
   border-radius: 2em;
