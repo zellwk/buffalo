@@ -11,8 +11,8 @@
   </div>
 {%- endif %}
 
-<div class="longform error" style="margin-top: 1rem">
-  {% if id === '2c4aeb3311' %}
+{% if id === '2c4aeb3311' %}
+  <div class="longform error" style="margin-top: 1rem">
     {%- markdown %}
     **NOTE:** You're using a sample Converkit ID from Zell's account!
 
@@ -20,11 +20,13 @@
 
     See `src/_includes/convertkit.njk` for more details
   {%- endmarkdown %}
-  {% endif %}
+  </div>
+{% endif %}
 
-  {% if not id %}
+{% if not id %}
+  <div class="longform error" style="margin-top: 1rem">
     {%- markdown %}
       **Invalid Newsletter ID**. Make sure you entered the correct newsletter ID. See `src/_includes/convertkit.njk` for more details.
     {%- endmarkdown %}
-  {%- endif %}
-</div>
+  </div>
+{%- endif %}
